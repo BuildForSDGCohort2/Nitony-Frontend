@@ -1,11 +1,13 @@
-import app from './app';
+import App from './app.js'
+import React from 'react';
+import ReactDom from 'react-dom'
+const root = document.getElementById('root')
+const Index = () => {
 
-const startApp = async () => {
-  const header = document.querySelector('[data-app-name]');
-  if (!header) return;
+  return (
+        <App />
 
-  const programName = await app();
-  header.textContent = programName;
-};
+  )
 
-document.addEventListener('DOMContentLoaded', startApp);
+}
+ReactDom.render(<Index />, root)
